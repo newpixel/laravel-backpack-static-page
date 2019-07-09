@@ -3,11 +3,10 @@
 namespace Newpixel\StaticPageCRUD\App\Models;
 
 use Backpack\CRUD\CrudTrait;
-
-use Cviebrock\EloquentSluggable\Sluggable;
-use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class StaticPage extends Model
 {
@@ -22,7 +21,7 @@ class StaticPage extends Model
     */
 
     protected $table = 'static_pages';
-    public static $displayZones = [ null => '-', 'header' => 'Antet', 'footer' => 'Subsol', 'headerfooter' => 'Antet si subsol'];
+    public static $displayZones = [null => '-', 'header' => 'Antet', 'footer' => 'Subsol', 'headerfooter' => 'Antet si subsol'];
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
@@ -43,9 +42,10 @@ class StaticPage extends Model
     public function sluggable()
     {
         return [
-            'slug' => [ 'source' => 'slug_or_name'],
+            'slug' => ['source' => 'slug_or_name'],
         ];
     }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
@@ -61,6 +61,7 @@ class StaticPage extends Model
     {
         return $query->where('active', true);
     }
+
     /*
     |--------------------------------------------------------------------------
     | ACCESORS
@@ -69,6 +70,7 @@ class StaticPage extends Model
     public function getSlugOrNameAttribute()
     {
         ($this->slug != '') ? $slug = $this->slug : $slug = $this->name;
+
         return $slug;
     }
 
@@ -79,8 +81,9 @@ class StaticPage extends Model
 
     public function getLinkAttribute()
     {
-        return url('/static/' . $this->slug . '.html');
+        return url('/static/'.$this->slug.'.html');
     }
+
     /*
     |--------------------------------------------------------------------------
     | MUTATORS

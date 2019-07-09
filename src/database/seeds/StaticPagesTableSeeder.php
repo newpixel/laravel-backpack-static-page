@@ -1,7 +1,7 @@
 <?php
 
-use Newpixel\StaticPageCRUD\App\Models\StaticPage;
 use Illuminate\Database\Seeder;
+use Newpixel\StaticPageCRUD\App\Models\StaticPage;
 
 class StaticPagesTableSeeder extends Seeder
 {

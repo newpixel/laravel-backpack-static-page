@@ -39,7 +39,6 @@ class StaticPageCRUDServiceProvider extends ServiceProvider
                 __DIR__.'/database/seeds/' => database_path('seeds'),
             ], 'seeds');
 
-
             // Publishing the views.
             /*$this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-backpack-static-page'),
@@ -59,7 +58,6 @@ class StaticPageCRUDServiceProvider extends ServiceProvider
             $this->commands([
                 \Newpixel\StaticPageCRUD\app\Console\Commands\AddSidebarStaticPageLinks::class,
             ]);
-
         }
     }
 
