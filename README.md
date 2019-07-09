@@ -12,13 +12,13 @@ An admin panel for static pages on Laravel 5, using [Backpack\CRUD](https://gith
 1) Install the package via composer:
 
 ```
-composer require newpixel/laravel-backpack-geography
+composer require newpixel/laravel-backpack-static-page
 ```
 
 2) Publish the config and migration:
 
 ```
-php artisan vendor:publish --provider="Newpixel\GeographyCRUD\GeographyCRUDServiceProvider"
+php artisan vendor:publish --provider="Newpixel\StaticPageCRUD\StaticPageCRUDServiceProvider"
 ```
 
 3) Run the migration to have the database table the package needs
@@ -30,7 +30,7 @@ php artisan migrate
 4) Run command to add tree links to resources/views/vendor/backpack/base/inc/sidebar_content.blade.php:
 
 ```
-php artisan pixeltour:add-sidebar-geography-links
+php artisan pixeltour:add-sidebar-static-page-links
 ```
 
 ### Testing
