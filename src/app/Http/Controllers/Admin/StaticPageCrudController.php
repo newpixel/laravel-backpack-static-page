@@ -2,15 +2,13 @@
 
 namespace Newpixel\StaticPageCRUD\App\Http\Controllers\Admin;
 
-
 // VALIDATION: change the requests to match your own file names if you need form validation
-use Newpixel\StaticPageCRUD\App\Http\Requests\StaticPageRequest as UpdateRequest;
-use Newpixel\StaticPageCRUD\App\Http\Requests\StaticPageRequest as StoreRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
+use Newpixel\StaticPageCRUD\App\Http\Requests\StaticPageRequest as StoreRequest;
+use Newpixel\StaticPageCRUD\App\Http\Requests\StaticPageRequest as UpdateRequest;
 
 /**
- * Class StaticPageCrudController
- * @package App\Http\Controllers\Admin
+ * Class StaticPageCrudController.
  * @property-read CrudPanel $crud
  */
 class StaticPageCrudController extends CrudController
@@ -23,7 +21,7 @@ class StaticPageCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         $this->crud->setModel('Newpixel\StaticPageCRUD\App\Models\StaticPage');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/static-page');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/static-page');
         $this->crud->setEntityNameStrings('pagina', 'pagini');
         $this->crud->enableReorder('name', 0);
         $this->crud->allowAccess('reorder', 1);
@@ -46,7 +44,7 @@ class StaticPageCrudController extends CrudController
             ],
             [
                'name'  => 'name',
-               'label' => 'Denumire'
+               'label' => 'Denumire',
             ],
             [
                 'name'    => 'display_in_menu',
@@ -58,8 +56,8 @@ class StaticPageCrudController extends CrudController
                'name'    => 'active',
                'label'   => 'Activ',
                'type'    => 'boolean',
-               'options' => [0 => 'Nu', 1 => 'Da']
-            ]
+               'options' => [0 => 'Nu', 1 => 'Da'],
+            ],
         ]);
 
         $this->crud->addFields(
